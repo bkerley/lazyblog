@@ -75,7 +75,8 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update
-    sudo apt-get install -y software-properties-common redis-server
+    sudo apt-get install -y software-properties-common redis-server sqlite3 libsqlite3-dev strace build-essential patch zlib1g-dev liblzma-dev
+
 
     curl -s https://packagecloud.io/install/repositories/basho/riak/script.deb.sh | sudo bash
     sudo apt-get install -y riak=2.1.4-1
@@ -91,7 +92,7 @@ Vagrant.configure(2) do |config|
     sudo gem install bundler
 
     pushd /vagrant
-    sudo bundle install
+    sudo -u vagrant bundle install
     popd
   SHELL
 end
