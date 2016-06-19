@@ -6,6 +6,6 @@ class BlogController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(comments: :user).where(id: params[:id]).first!
   end
 end
