@@ -9,6 +9,9 @@ gem 'sqlite3'
 gem 'riak-client', '~> 2.4.0'
 gem 'redis', '~> 3.3.0'
 
+gem 'meta_request'
+gem 'foreman'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
