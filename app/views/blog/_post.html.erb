@@ -7,6 +7,6 @@
   <%= simple_format post.body %>
 </section>
 <footer>
-  <p><%= pluralize post.comments.count, 'comment' %></p>
+  <p><%= pluralize post.comments.size, 'comment' %></p>
 </footer>
 <% end %>
