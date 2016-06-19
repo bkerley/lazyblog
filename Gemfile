@@ -6,6 +6,8 @@ gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
+gem 'hashie'
+
 gem 'riak-client', '~> 2.4.0'
 gem 'redis', '~> 3.3.0'
 
