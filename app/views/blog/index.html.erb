@@ -1,15 +1,1 @@
-<% @posts.each do |post| %>
-<%= content_tag_for 'article', post do %>
-<header>
-  <h1><%= post.name %></h1>
-  <p>Posted at <%= post.created_at.iso8601 %></p>
-</header>
-<section>
-  <%= simple_format post.body %>
-</section>
-<footer>
-  <p><%= post.comments.count %> comments</p>
-  <p><%= link_to 'Read more', read_path(post.id) %>
-</footer>
-<% end %>
-<% end %>
+<%= render partial: 'post', collection: @posts %>
