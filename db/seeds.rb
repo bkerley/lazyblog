@@ -14,6 +14,6 @@ end
   p = Post.create name: "Post #{n}", body: n.to_s
 
   rand(20).times do |c|
-    Comment.create post_id: p.id, user_id: users.sample, body: "asdf"
+    Comment.create post_id: p.id, user_id: users.sample.id, body: "asdf"
   end
 end
