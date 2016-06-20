@@ -6,9 +6,6 @@ class BlogController < ApplicationController
   end
 
   def show
-    @post = Post.
-            includes(comments: :user).
-            where(id: params[:id]).
-            first!
+    @post = RiakPost.find(params[:id])
   end
 end
