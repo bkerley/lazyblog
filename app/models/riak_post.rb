@@ -11,7 +11,7 @@ class RiakPost < Hashie::Mash
   def self.from_post(post)
     existing_blob = bucket.get_or_new(post.id.to_s)
     existing_data = existing_blob.data || {}
-    merged_data = existing_data.merge post.attributes
+    merged_data = existing_data.merge post.as_json(include: %i{user comments})
     new(merged_data).tap do |created|
       created.robject = existing_blob
     end
